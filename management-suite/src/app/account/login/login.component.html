@@ -1,0 +1,51 @@
+
+<div class="outer-box">
+    <div class="inner-box">
+        <header class="signup-header">
+            <h1>{{isLoginMode? 'Sign In':'Signup'}} Here</h1>
+        </header>
+        <main class="signup-body">
+            <form *ngIf="!isLoginMode" action="" class="signup-body">
+                <p>
+                    <label for="fullname">Full Name</label>
+                    <input type="text" name="fullname" placeholder="Enter Full Name" required>
+
+                </p>
+                <p>
+                    <label for="email">Your Email</label>
+                    <input type="text" name="email" placeholder="Enter email id" required>
+
+                </p>
+                <p>
+                    <label for="password">Your New Password</label>
+                    <input type="text" name="password" placeholder="Enter Password" required>
+
+                </p>
+                <p>
+                    <button id="submit-btn">Create Account</button>
+                </p>
+            </form>
+            <form *ngIf="isLoginMode" action="" class="signup-body">
+               
+                <p>
+                    <label for="email">Your Email</label>
+                    <input type="text" name="email" placeholder="Enter email id" required>
+            
+                </p>
+                <p>
+                    <label for="password">Password</label>
+                    <input type="text" name="password" placeholder="Enter Password" required>
+            
+                </p>
+                <p>
+                    <button id="submit-btn">Sign In</button>
+                </p>
+            </form>
+        </main>
+        <footer class="signup-footer">
+            <p>{{isLoginMode?'Do not have account?':'Already have an account?'}}  <a (click)="onSwitchMode()">{{isLoginMode?'Register Here':' Login Here'}}</a></p>
+        </footer>
+    </div>
+    <div class="cicle c1"></div>
+    <div class="cicle c2"></div>
+</div>
